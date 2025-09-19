@@ -8,15 +8,15 @@ const myserver = express()
 myserver.use(cors(origin = "*"))
 myserver.use(bodyParser.json())
 myserver.use(express.json())
-const product = require("./routes/productroute")
-const user = require("./routes/userroute")
+const ProductRoutes = require("./routes/productroute")
+const UserRoutes = require("./routes/userroute")
 
 
 myserver.get("/",(req,res)=>{
     res.send("hello")
 })
-myserver.use("/product", product)
-myserver.use("/user", user)
+myserver.use("/product", ProductRoutes)
+myserver.use("/user", UserRoutes)
 
 
 
